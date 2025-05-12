@@ -1,9 +1,40 @@
 # 🧠 Task Manager API – Instalación y Configuración Local
 
-Este proyecto es una API RESTful construida con **.NET 8** y utiliza **SQL Server 2019 Developer Edition** como base de datos. El proyecto todo-backend implementa una arquitectura en capas que sigue los principios SOLID y utiliza el patrón Repository para estructurar el código de manera modular y mantenible. A continuación, los pasos necesarios para clonar, configurar y ejecutar el proyecto en el entorno local.
+Este proyecto es una API RESTful construida con **.NET 8** y utiliza **SQL Server 2019 Developer Edition** como base de datos. A continuación, los pasos necesarios para clonar, configurar y ejecutar el proyecto en el entorno local.
 
 ---
 
+## To-do backend
+### 🏗️ Arquitectura utilizada
+El proyecto sigue una arquitectura en capas, también conocida como N-Tier Architecture, que se caracteriza por separar la aplicación en diferentes capas con responsabilidades bien definidas:
+
+Capa de Presentación: Maneja la interacción con el usuario o cliente. En este caso, los controladores en la carpeta Controllers/ actúan como la capa de presentación, recibiendo las solicitudes HTTP y devolviendo las respuestas correspondientes.
+
+Capa de Aplicación/Servicios: Contiene la lógica de negocio y coordina las operaciones entre la capa de presentación y la de datos. La carpeta Services/ implementa esta capa, proporcionando métodos que los controladores pueden invocar para realizar acciones específicas.
+
+Capa de Dominio/Modelos: Representa las entidades y reglas de negocio fundamentales. La carpeta Models/ define las clases que representan las entidades del dominio.
+
+Capa de Acceso a Datos: Se encarga de la interacción con la base de datos. La carpeta Data/ contiene el contexto de la base de datos y las interfaces de los repositorios que abstraen el acceso a los datos.
+
+---
+
+### Principios SOLID y patrón Repository
+El diseño del proyecto refleja la aplicación de los principios SOLID:
+
+S (Single Responsibility Principle): Cada clase tiene una única responsabilidad. Por ejemplo, los controladores manejan las solicitudes HTTP, los servicios contienen la lógica de negocio y los repositorios gestionan el acceso a los datos.
+
+O (Open/Closed Principle): El sistema está abierto para la extensión pero cerrado para la modificación. Se pueden agregar nuevas funcionalidades sin alterar el código existente, gracias al uso de interfaces y clases abstractas.
+
+L (Liskov Substitution Principle): Las clases derivadas pueden sustituir a sus clases base sin alterar el comportamiento del programa. Esto se logra mediante la implementación coherente de interfaces.
+
+I (Interface Segregation Principle): Se prefieren interfaces específicas y pequeñas en lugar de interfaces generales y grandes, lo que facilita la implementación y el mantenimiento.
+
+D (Dependency Inversion Principle): Las dependencias se inyectan a través de interfaces, lo que permite una mayor flexibilidad y facilidad para realizar pruebas.
+
+El uso del patrón Repository en la carpeta Data/ permite abstraer el acceso a los datos, proporcionando una interfaz común para interactuar con la base de datos. Esto facilita el mantenimiento y la escalabilidad del código, ya que los detalles de implementación del acceso a los datos están encapsulados y separados de la lógica de negocio.
+
+---
+---
 ## ✅ Requisitos
 
 - [.NET SDK 8.0+](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
