@@ -12,9 +12,9 @@ namespace todo_backend.Data.Repository.Implementations
             _context = context;
         }
 
-        public async Task<IEnumerable<TaskItem>?> GetAllTasks()
+        public async Task<IEnumerable<TaskItem>?> GetAllTasks(Guid userId)
         {
-            return await _context.Tasks.ToListAsync();
+            return await _context.Tasks.Where(t => t.UserId == userId).ToListAsync();
         }
 
         async public Task<TaskItem?> GetTaskById(Guid id)

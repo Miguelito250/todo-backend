@@ -7,7 +7,7 @@ namespace todo_backend.Services.Interfaces
     {
         Task CreateTaskAsync(TaskItem task);
         Task<TaskItem?> GetTaskByIdAsync(Guid taskId);
-        Task<IEnumerable<TaskItem>?> GetAllTasksAsync();
+        Task<IEnumerable<TaskItem>?> GetAllTasksAsync(Guid userId);
         Task<Response> UpdateTaskAsync(TaskItem task, Guid id);
         Task<bool> DeleteTaskAsync(Guid taskId);
     }

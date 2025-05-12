@@ -33,9 +33,9 @@ namespace todo_backend.Services.Implementations
             return task;
         }
 
-        public async Task<IEnumerable<TaskItem>?> GetAllTasksAsync()
+        public async Task<IEnumerable<TaskItem>?> GetAllTasksAsync(Guid userId)
         {
-            return await _taskRepository.GetAllTasks();
+            return await _taskRepository.GetAllTasks(userId);
         }
 
         public async Task<Response> UpdateTaskAsync(TaskItem taskItem, Guid id)

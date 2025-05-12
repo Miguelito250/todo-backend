@@ -29,9 +29,10 @@ namespace todo_backend.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllTasks()
+        [Route("tasksUser/{userId:guid}")]
+        public async Task<IActionResult> GetAllTasks(Guid userId)
         {
-            var tasks = await _taskService.GetAllTasksAsync();
+            var tasks = await _taskService.GetAllTasksAsync(userId);
             if (tasks == null) return NotFound();
 
             return Ok(tasks);

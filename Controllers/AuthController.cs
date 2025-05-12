@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using todo_backend.DTOS;
 using todo_backend.Services.Interfaces;
 using todo_backend.Utils.Reponses;
@@ -13,6 +14,14 @@ namespace todo_backend.Controllers
         {
             _authService = authService;
         }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult ValidateToken() 
+        {
+            return NoContent();
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> LoginAccount([FromBody]LoginRequest credentials)

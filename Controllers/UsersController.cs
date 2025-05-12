@@ -28,7 +28,7 @@ namespace todo_backend.Controllers
 
             if (string.IsNullOrEmpty(accessToken)) return BadRequest("Error generating token");
 
-            return Ok(accessToken);
+            return Ok();
         }
     }
 }
