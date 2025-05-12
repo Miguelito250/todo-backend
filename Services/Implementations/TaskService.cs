@@ -14,6 +14,10 @@ namespace todo_backend.Services.Implementations
             _taskRepository = repo;
         }
 
+        /// <summary>
+        /// Crear una nueva tarea en la base de datos.
+        /// se establecen 3 valores para el estado para representar cada uno, se guarda en ingle pero en el front se muestran en español
+        /// trad
         public async Task CreateTaskAsync(TaskItem task)
         {
             var allowedStatuses = new[] { "pending", "inProgress", "completed" };

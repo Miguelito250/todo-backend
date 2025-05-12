@@ -5,6 +5,11 @@ using todo_backend.Services.Interfaces;
 using todo_backend.Utils.Reponses;
 namespace todo_backend.Controllers
 {
+    /// <summary>
+    /// El controlador AuthController maneja la autenticacion de los usuarios
+    /// y sus respectivas respuestas a las diferentes peticiones
+    /// hay una funcion que valida el token y otra que maneja el login de usuarios
+
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase

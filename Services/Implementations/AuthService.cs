@@ -6,6 +6,10 @@ using todo_backend.Utils.JWT;
 using todo_backend.Utils.Reponses;
 namespace todo_backend.Services.Implementations
 {
+    /// <summary>
+    /// Esta es la clase encargada de realizar la autenticación de los usuarios.
+    /// la funcion valida si el usuario es el mismo que hay en la base de datos
+    /// utilizando la lyave BCrypt para verificar la contraseña.
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;

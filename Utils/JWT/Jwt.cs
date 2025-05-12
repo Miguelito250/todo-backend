@@ -5,6 +5,10 @@ using System.Text;
 
 namespace todo_backend.Utils.JWT
 {
+    /// <summary>
+    /// Esta es la clase que manja los tokens JWT y los genera
+    /// en un entorno de producción seria mejor no pasar por medio de un parametro
+    /// los minutos, vendrian en el archivo appsettings.json per  por temas de practicidad se coloca acá
     public class Jwt
     {
         private readonly OptionsToken _OptiosToken;
