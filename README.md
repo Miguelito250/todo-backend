@@ -1,6 +1,6 @@
 # 🧠 Task Manager API – Instalación y Configuración Local
 
-Este proyecto es una API RESTful construida con **.NET 8** y utiliza **SQL Server 2019 Developer Edition** como base de datos. A continuación, te mostramos los pasos necesarios para clonar, configurar y ejecutar el proyecto en tu entorno local.
+Este proyecto es una API RESTful construida con **.NET 8** y utiliza **SQL Server 2019 Developer Edition** como base de datos. El proyecto todo-backend implementa una arquitectura en capas que sigue los principios SOLID y utiliza el patrón Repository para estructurar el código de manera modular y mantenible. A continuación, los pasos necesarios para clonar, configurar y ejecutar el proyecto en el entorno local.
 
 ---
 
@@ -47,8 +47,8 @@ Si usas autenticación por usuario y contraseña:
 }
 ```
 
-### 4. Aplicar migraciones (si se usa EF Core)
-Si el proyecto utiliza Entity Framework Core, ejecuta:
+### 4. Aplicar migraciones 
+ejecuta para aplicar las migraciones a la base de datos:
 
 ```bash
 dotnet ef database update
